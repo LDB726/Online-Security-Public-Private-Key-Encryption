@@ -40,8 +40,7 @@ def encrypt_message(n,e,message):
 	newm=[]
 	for let in mes:
 		y=((ord(let))**e)%n
-		z=chr(y)
-		newm.append(z)
+		newm.append(y)
 	return newm
 def decrypt_message(n,d, list):
 	oldm=[]
