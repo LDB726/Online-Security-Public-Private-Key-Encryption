@@ -25,5 +25,55 @@ def primes_less_than(n):
 		if prime[p]:
 			all_primes.append(p)
 	return all_primes
+def encrypt(n,e, letter):
+	x=ord(letter)
+	y=(x**e)%n
+	newletter=chr(y)
+	return newletter
+def decrypt(n,d, enc):
+	x=ord(enc)
+	y=(x**d)%n
+	newletter=chr(y)
+	return newletter
+def encrypt_message(n,e,message):
+	mes=list(message)
+	newm=[]
+	for let in mes:
+		y=((ord(let))**e)%n
+		z=chr(y)
+		newm.append(z)
+	return newm
+def decrypt_message(n,d, list):
+	oldm=[]
+	for let in list:
+		y=((ord(let))**d)%n
+		z=chr(y)
+		oldm.append(z)
+		realm = "".join(oldm)
+	return realm
+
 
 print("All primes less than 1,000:\n"+str(primes_less_than(1000)))
+p=67
+q=97
+e=23
+d=551
+print(gcd(p, q))
+t=((p-1)*(q-1))
+n=p*q
+for x in range(10):
+	m=x*23
+	z=m%t
+	if z==1:
+		print(m)
+		print(str(z)+"!!!!")
+print(12673/23)
+newl = encrypt(n,e, "p")
+oldl = decrypt(n, d, newl)
+newm = encrypt_message(n,e,"hello world")
+oldm = decrypt_message(n,d,newm)
+print(1234567)
+print(newl)
+print(oldl)
+print(newm)
+print(oldm)
