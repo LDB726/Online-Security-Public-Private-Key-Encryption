@@ -40,13 +40,12 @@ def encrypt_message(n,e,message):
 	newm=[]
 	for let in mes:
 		y=((ord(let))**e)%n
-		z=chr(y)
-		newm.append(z)
+		newm.append(y)
 	return newm
 def decrypt_message(n,d, list):
 	oldm=[]
-	for let in list:
-		y=((ord(let))**d)%n
+	for num in list:
+		y=(num**d)%n
 		z=chr(y)
 		oldm.append(z)
 		realm = "".join(oldm)
@@ -71,9 +70,9 @@ print(12673/23)
 newl = encrypt(n,e, "p")
 oldl = decrypt(n, d, newl)
 newm = encrypt_message(n,e,"hello world")
-oldm = decrypt_message(n,d,newm)
+realm = decrypt_message(n,d,[3952, 845, 3853, 3853, 5408, 4077, 3952, 154, 2663, 2952, 4077, 5204, 4077, 5128, 3219, 3589, 3853, 2952, 4077, 5408, 1785, 154, 845, 1245, 565, 4077, 2952, 154, 4077, 727, 565, 3589, 1785, 1245, 5408, 4077, 2952, 565, 5408, 4077, 1149, 845, 2952, 845, 492, 5408, 3947, 5128])
 print(1234567)
 print(newl)
 print(oldl)
 print(newm)
-print(oldm)
+print(realm)
